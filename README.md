@@ -13,6 +13,18 @@ Made for app marketers who look for creative angles in what their audience cares
 
 No key? Press **Copy request for Claude**, paste it into a new Claude chat and send it. The request already has this week's trend data inside.
 
+## Don't want to paste your key into a website?
+
+Fair. Run it on your own computer instead:
+
+1. Download the ZIP: https://github.com/Dmtrue94/trend-finder/archive/refs/heads/main.zip
+2. Unzip it and double-click `index.html`. It opens in your browser.
+3. Paste your key and press **Find trends**.
+
+Nothing to install. The key is sent only to `api.anthropic.com`, and you can check that yourself: the only `fetch` call in `index.html` goes there. Download the ZIP again any day to get fresh trend data.
+
+Extra safety: create a separate key just for this tool, set a monthly spend limit in the Anthropic Console, and delete the key whenever you want.
+
 ## What you get
 
 For each trend: how hot it is and how long you have, what is happening, why it fits your app, numbers with links, a video idea second by second, other first lines, and what to avoid. Plus what was skipped and why.
