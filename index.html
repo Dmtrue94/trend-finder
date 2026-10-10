@@ -91,6 +91,12 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: grid; gap: 6px; }
 .hint { margin: 8px 0 0; color: var(--soft); font-size: 14px; }
 .hint a { color: var(--ink); }
 .keysaved { margin: 12px 0 0; color: var(--soft); font-size: 14px; }
+.howkey { margin-top: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; font-size: 14px; }
+.howkey summary { cursor: pointer; font-weight: 500; color: var(--ink); }
+.howkey ol { margin: 10px 0 0; padding-left: 1.2em; display: grid; gap: 6px; }
+.howkey p { margin: 10px 0 0; color: var(--soft); }
+.howkey a { color: var(--ink); }
+.howkey code { font-family: var(--mono); font-size: 13px; }
 .fallback { margin-top: 14px; border: 1px solid var(--line); background: var(--card); border-radius: 16px; padding: 16px 18px; }
 .fallback p { margin: 0; }
 .fallback .copy { margin-top: 12px; }
@@ -116,7 +122,17 @@ details ul { margin: 12px 0 0; padding-left: 1.1em; display: grid; gap: 6px; }
       <div class="keybox" id="keybox">
         <label for="api-key">Your Anthropic API key</label>
         <input id="api-key" type="password" autocomplete="off" spellcheck="false" placeholder="sk-ant-...">
-        <p class="hint">Searches run on your own key, so you pay Anthropic directly (a few cents per search). The key stays in this browser and goes only to Anthropic. <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noreferrer">Get a key</a></p>
+        <p class="hint">Searches run on your own key, so you pay Anthropic directly (a few cents per search). The key stays in this browser and goes only to Anthropic.</p>
+        <details class="howkey" id="howkey">
+          <summary>How to get a key (2 minutes)</summary>
+          <ol>
+            <li>Go to <a href="https://console.anthropic.com" target="_blank" rel="noreferrer">console.anthropic.com</a> and sign in. It is a separate account from your Claude chat subscription.</li>
+            <li>Open <a href="https://console.anthropic.com/settings/billing" target="_blank" rel="noreferrer">Billing</a> and add credit. $5 is enough for many searches.</li>
+            <li>Open <a href="https://console.anthropic.com/settings/keys" target="_blank" rel="noreferrer">API Keys</a>, press <b>Create Key</b> and copy it. It starts with <code>sk-ant-</code>.</li>
+            <li>Paste it in the field above and press <b>Find trends</b>.</li>
+          </ol>
+          <p>No key? Use <b>Copy request for Claude</b> below. It works with any Claude account, even a free one.</p>
+        </details>
       </div>
       <p class="keysaved" id="keysaved" hidden>Using your saved API key · <button class="linkish" id="change-key" type="button">Change</button></p>
       <button class="go" id="go" type="submit">Find trends</button>
